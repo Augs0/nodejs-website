@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/journal/bootstrap.min.css"
+    />
+    <title>Otterly Crazy</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('_header') %>
+      <main>
+        <h2>News and articles</h2>
+        <a class="btn btn-outline-primary text-dark" href="/articles/new"
+          >Add an article</a
+        >
+        <% articles.forEach(article =>{ %>
+        <div class="card bg-secondary mt-4 p-3">
+          <h3 class="card-title"><%= article.title %></h3>
+          <p class="card-subtitle mb-2">
+            <%=article.createdon.toLocaleDateString() %>
+          </p>
+          <p class="mb-2"><%= article.description %></p>
+        </div>
+        <% }) %>
+      </main>
+    </div>
+  </body>
+</html>
